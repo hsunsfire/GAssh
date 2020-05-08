@@ -1,0 +1,26 @@
+https://p3terx.com/archives/ssh-to-the-github-actions-virtual-server-environment.html
+
+博主在实际使用中觉得以上方案的体验不很理想，于是决定自己开了坑。fork 了 csexton/debugger-action 并进行了一些改进。比如优化了部分提示文案的显示逻辑，修改连接超时为 30 分钟，解决了失去控制的问题。后续会持续进行改进，以达到更好的使用体验。
+
+work­flow 文件示例：
+
+name: Ubuntu
+on:
+  watch:
+    types: started
+jobs:
+  Ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
+      
+      
+简单使用 | 点击查看
+新建仓库
+新建 workflow 文件
+粘贴代码
+点击star
+索然无味
+
+touch /tmp/keepalive
