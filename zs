@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "password" | passwd  root --stdin > /dev/null 2>&1
+echo "root:password" | chpasswd
 
 curl -s https://install.zerotier.com | sudo bash
 
