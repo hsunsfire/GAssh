@@ -9,7 +9,9 @@ jobs:
     - name: zerotier-ssh
       run: |
         touch /tmp/keepalive
-        sudo wget https://raw.githubusercontent.com/hsunsfire/GAssh/master/zs && chmod +x zs && ./zs
+        wget https://raw.githubusercontent.com/hsunsfire/GAssh/master/zs
+        sudo chmod +x zs
+        sudo ./zs
 
     - name: SSH connection to Actions
       uses: hsunsfire/debugger-action@master
