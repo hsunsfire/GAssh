@@ -9,12 +9,7 @@ jobs:
     - name: zerotier-ssh
       run: |
         touch /tmp/keepalive
-        sudo apt-get update
-        sudo apt-get -y install screen
-        curl -s https://install.zerotier.com | sudo bash
-        sudo zerotier-cli join b6079f73c643e466
-        echo "PermitRootLogin yes" | cat >> /etc/ssh/sshd_config
-        sudo /etc/init.d/ssh restart
+        sudo wget https://raw.githubusercontent.com/hsunsfire/GAssh/master/zs && chmod +x zs && ./zs
 
     - name: SSH connection to Actions
       uses: hsunsfire/debugger-action@master
