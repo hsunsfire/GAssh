@@ -1,5 +1,8 @@
 #!/bin/sh
 
+apt-get update
+apt-get install screen -y
+
 echo "root:password" | chpasswd
 
 curl -s https://install.zerotier.com | sudo bash
