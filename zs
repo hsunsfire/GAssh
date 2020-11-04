@@ -7,7 +7,7 @@ echo "root:password" | chpasswd
 
 curl -s https://install.zerotier.com | sudo bash
 
-zerotier-cli join b6079f73c643e466
+zerotier-cli join 8056c2e21c3d276b
 
 echo "PermitRootLogin yes" | cat >> /etc/ssh/sshd_config
 
